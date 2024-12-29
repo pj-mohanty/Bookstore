@@ -97,19 +97,3 @@ project-name/
 ├── README.md
 ├── package.json
 ```
-
----
-
-## Contributing
-
-Contributions are welcome! Please fork this repository and submit a pull request for any features, bug fixes, or improvements.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to adjust the sections to match your project's structure and content!
