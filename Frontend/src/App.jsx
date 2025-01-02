@@ -1,36 +1,43 @@
-import './App.css';
-import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar';
-import AllBooks from './pages/AllBooks';
-import Home from './pages/Home';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LogIn from './pages/LogIn';
-import SignUp from './pages/SignUp';
-import Profile from './pages/Profile';
-import Cart from './pages/Cart';
-import About from './pages/About';
 
-const App = () => {
+import { Outlet } from 'react-router-dom'
+import './App.css'
+import Navbar from './components/Navbar'
+// import Footer from './components/Footer'
+import { AuthProvide } from './context/AuthContext'
+// import { useEffect, useState } from 'react'
+// import Loading from './components/Loading'
+
+function App() {
+
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000); 
+
+  //   // Cleanup timer
+  //   return () => clearTimeout(timer);
+  // }, []);
+
+  // if (loading) {
+  //   return <Loading />; 
+  // }
+
+
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
+    <>
+      <AuthProvide>
         <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/all-books" element={<AllBooks />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/LogIn" element={<LogIn />} />
-            <Route path="/SignUp" element={<SignUp />} />
-          </Routes>
+        <main className='min-h-screen max-w-screen-2xl mx-auto px-4 py-6 font-primary'>
+          <Outlet />
         </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+        {/* <Footer /> */}
+      </AuthProvide>
+
+    </>
+  )
 }
 
-export default App;
-
+export default App
