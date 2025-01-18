@@ -18,9 +18,7 @@ This project uses modern web development technologies like React, Redux, and Tai
 
 ---
 
-## Installation  
-
-### Prerequisites  
+## Installation    
 1. **Node.js**: Ensure you have Node.js installed.  
 2. **MongoDB**: Access to a running MongoDB instance or URI.  
 3. **Firebase**: A Firebase project set up for authentication.  
